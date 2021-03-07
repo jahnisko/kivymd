@@ -2,7 +2,7 @@ from kivy.app import App
 from kivy.metrics import dp
 from kivy.uix.behaviors import TouchRippleBehavior
 from kivy.uix.button import Button
-from kivy.lang import Builder # kivy jazyk .kv
+from kivy.lang import Builder
 
 
 KV = """

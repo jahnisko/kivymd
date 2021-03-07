@@ -1,0 +1,22 @@
+{
+  "ostepari": [
+    {
+      "jmeno": "Jan Železný",
+      "narodnost": "CZE",
+      "hod": "98.48 metrů",
+      "img": "modules/cr.jpg"
+    },
+    {
+      "jmeno": "Andreas Thorkildsen",
+      "narodnost": "NOR",
+      "hod": "90.57 metrů",
+      "img": "modules/norsko.jpg"
+    },
+    {
+      "jmeno": "Osleidys Menéndezová",
+      "narodnost": "C",
+      "hod": "71.70 metrů",
+      "img": "modules/kuba.jpg"
+    }
+  ]
+}

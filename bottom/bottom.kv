@@ -31,18 +31,11 @@ BoxLayout:
 <TextScreen>:
     name: 'textscreen'
     FloatLayout:
-        canvas:
-            Color:
-                rgba: 0.65, 0.35, 0, 1
-            RoundedRectangle:
-                pos: self.pos
-                size: self.size
-                radius: [0, 25, 0, 0]
         MDLabel:
             id: label
-            text: 'Hi I am  label!'
+            size: self.size
             size_hint: (.5, .1)
-            pos_hint: {'center_x': .5, 'center_y': .9}
+            pos_hint: {'center_x': .5, 'center_y': .2}
             font_style: 'H5'
             canvas.before:
                 Color:
@@ -53,71 +46,46 @@ BoxLayout:
         BoxLayout:
             orientation: 'horizontal'
             size_hint_x: .8
-            size_hint_y: 0.1
-            pos_hint: {'center_x': .5}
+            size_hint_y: .1
+            pos_hint: {'center_x': .5, 'center_y': .7}
             height: self.minimum_height
             spacing: 10
-            canvas.before:
-                Color:
-                    rgba: .5, .5, 0, 1
-                Rectangle:
-                    pos: self.pos
-                    size: self.size
-            MDLabel:
-                text: "Váha"
-                canvas.before:
-                    Color:
-                        rgba: 1, 1, 1, 0.5
-                    Rectangle:
-                        pos: self.pos
-                        size: self.size
+
             MDTextField:
                 id: vaha
+                input_filter: 'float'
+                hint_text: "Zadejte svou váhu"
                 mode: 'fill'
 
         BoxLayout:
             orientation: 'horizontal'
             size_hint_x: .8
             size_hint_y: 0.1
-            pos_hint: {'center_x': .5, 'center_y': .4}
+            pos_hint: {'center_x': .5, 'center_y': .8}
             height: self.minimum_height
             spacing: 10
-            canvas.before:
-                Color:
-                    rgba: .5, .5, 0, 1
-                Rectangle:
-                    pos: self.pos
-                    size: self.size
-            MDLabel:
-                text: "Výška"
-                canvas.before:
-                    Color:
-                        rgba: 1, 1, 1, 0.5
-                    Rectangle:
-                        pos: self.pos
-                        size: self.size
+
             MDTextField:
                 id: vyska
+                input_filter: 'float'
+                hint_text: "Zadejte svou výšku"
                 mode: 'fill'
 
         MDRaisedButton:
             text: "Vypočítej"
             md_bg_color: 0.4, 0.4, 0.4, 1
-            pos_hint: {'center_x': .65, 'center_y': .9}
+            pos_hint: {'center_x': 0.17, 'center_y': .5}
             on_press:
-                print("Stisknuto třeba!")
-                root.ids.label.text = str(int(root.ids.vaha.text) / ((int(root.ids.vyska.text)/100) ** 2))
+                print("Stisknuto!")
+                root.ids.label.text = str(round(float(root.ids.vaha.text) / ((float(root.ids.vyska.text)/100) ** 2), 2))
 <FormScreen>
     name:'formscreen'
     PageLayout:
         MDLabel:
             canvas.before:
-                Color:
-                    rgba: 0, 1, 1, 0.5
                 Rectangle:
                     pos: self.pos
                     size: self.size
-            text:'Form Screen'
             font_style: 'H2'
             halign: 'center'
             pos_hint : {'center_y':0.85}
