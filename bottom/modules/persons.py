@@ -44,7 +44,7 @@ class Persons(BoxLayout):
         dir_path = os.path.dirname(os.path.realpath(__file__))
         '''for i in person_list:
             list.add_widget(MyItem(name=i['name'], state=i['state']))'''
-        with open(dir_path + '/' + 'persons.json') as json_file:
+        with open(dir_path + '/' + 'persons.json', encoding="utf-8") as json_file:
             data = json.load(json_file)
             for i in data["ostepari"]:
                 list.add_widget(MyItem(name=i['jmeno'], state=i['narodnost'], hod=i["hod"], image=i['img']))
